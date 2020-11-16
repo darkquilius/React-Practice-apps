@@ -34,19 +34,24 @@ useEffect(() => {
   fetchTours();
 }, [])
 
-  return (loading?
-  <main>
-    <Loading />
-  </main>:
-  <main>
-    {loading === false && tours.length === 0?    
-      <div>
-        <h2>No Tours Left...</h2>
-        <button className="btn" onClick={fetchTours}>Reset Tours</button>
-      </div>:
-      <Tours tours={tours} removeTour={removeTour}/>
-  }
-  </main>
+  return (
+  loading?
+  
+    <main>
+      <Loading />
+    </main>:
+  
+    <main>
+      {loading === false && tours.length === 0?    
+       
+        <div>
+          <h2>No Tours Left...</h2>
+          <button className="btn" onClick={fetchTours}>Reset Tours</button>
+        </div>:
+      
+        <Tours tours={tours} removeTour={removeTour}/>
+      }
+    </main>
   );
 }
 
